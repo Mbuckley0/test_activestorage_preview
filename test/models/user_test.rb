@@ -9,5 +9,8 @@ class UserTest < ActiveSupport::TestCase
       filename: "test-file.pdf",
       content_type: "application/pdf",
     )
+
+    blob = ActiveStorage::Blob.last
+    blob.preview({}).processed
   end
 end
